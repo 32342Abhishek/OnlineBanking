@@ -1,0 +1,403 @@
+:root {
+  --primary-color: #0066cc;
+  --secondary-color: #004080;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --text-secondary: #666666;
+  --hover-color: #0052a3;
+  --navbar-height: 70px;
+  --navbar-gradient: linear-gradient(90deg, #0052a3, #0066cc, #004080);
+}
+
+.bank-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--navbar-gradient);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  height: var(--navbar-height);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: slideInDown 0.5s ease-out;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  color: white;
+  transition: all 0.1s ease;
+  padding: 2px;
+  gap: 4px;
+}
+
+.logo-link:hover {
+  transform: scale(1.02);
+}
+
+.navbar-logo {
+  height:50px;
+  width: 50px;
+  margin-right: 0;
+  border-radius: 100%;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  transition: all 0.1s ease;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.logo-link:hover .navbar-logo {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  transform: rotate(2deg);
+}
+
+.bank-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  line-height: 0.8;
+  margin-left: 4px;
+}
+
+.bank-name {
+  font-size: 1rem !important;
+  color: white;
+  font-weight: bold;
+  text-shadow: none;
+}
+
+.bank-name * {
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  color: inherit !important;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.with-dropdown {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  min-width: 220px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 0.75rem 0;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.1s ease;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.dropdown-menu[style*="block"] {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(5px);
+  animation: fadeInMenu 0.3s ease;
+}
+
+@keyframes fadeInMenu {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.6rem 1.25rem;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  position: relative;
+  border-left: 3px solid transparent;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(99, 102, 241, 0.08);
+  color: var(--primary-color);
+  border-left: 3px solid var(--primary-color);
+  padding-left: 1.5rem;
+}
+
+.dropdown-menu a:hover::before {
+  content: '→';
+  position: absolute;
+  left: 0.75rem;
+  color: var(--primary-color);
+  font-size: 0.8rem;
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.login-btn, .register-btn {
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.login-btn {
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.login-btn:hover::after {
+  transform: translateX(0);
+}
+
+.login-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.register-btn {
+  background-color: white;
+  color: var(--primary-color);
+  border: 2px solid white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.register-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.register-btn:hover::after {
+  transform: translateX(0);
+}
+
+.register-btn:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-greeting {
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.logout-btn {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.logout-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.logout-btn:hover::after {
+  transform: translateX(0);
+}
+
+.logout-btn:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Mobile navbar styles */
+@media (max-width: 992px) {
+  .navbar-container {
+    padding: 0 1rem;
+  }
+  
+  .nav-menu {
+    display: none;
+  }
+  
+  .navbar-logo {
+    height: 35px;
+    width: 35px;
+    margin-right: 0;
+  }
+  
+  .login-btn, .register-btn, .logout-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .user-greeting {
+    display: none;
+  }
+  
+  /* Adjusted scrolled state for mobile */
+  .bank-navbar.scrolled .navbar-logo {
+    height: 30px;
+    width: 30px;
+  }
+  
+  .bank-name {
+    font-size: 0.35rem !important;
+  }
+}
+
+/* Animation for navbar on scroll */
+.bank-navbar.scrolled {
+  background: rgba(0, 102, 204, 0.95);
+  height: 60px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.bank-navbar.scrolled .navbar-logo {
+  height: 45px;
+  width: 45px;
+}
+
+.bank-navbar.scrolled .nav-link {
+  font-size: 0.9rem;
+}
+
+/* Add animations for navbar elements */
+@keyframes slideInDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

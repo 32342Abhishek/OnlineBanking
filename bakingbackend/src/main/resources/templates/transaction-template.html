@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Transaction Notification</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .header {
+            background-color: #1a73e8;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+            margin-bottom: 20px;
+        }
+        .transaction-details {
+            background-color: #e8f0fe;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+            padding: 8px 0;
+        }
+        .detail-label {
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Apna Bank</h1>
+        </div>
+        
+        <p>Dear Customer,</p>
+        
+        <p>This is to inform you that a transaction has occurred on your account. Details are as follows:</p>
+        
+        <div class="transaction-details">
+            <div class="detail-row">
+                <span class="detail-label">Account Number:</span>
+                <span th:text="${accountNumber}">XXXXXXXX1234</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Transaction Type:</span>
+                <span th:text="${transactionType}">Debit/Credit</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Amount:</span>
+                <span th:text="${amount}">₹10,000.00</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Date & Time:</span>
+                <span th:text="${#temporals.format(#temporals.createNow(), 'dd-MMM-yyyy hh:mm a')}">01-Jan-2023 10:00 AM</span>
+            </div>
+        </div>
+        
+        <p>If you did not authorize this transaction, please contact our customer care immediately at 1800-XXX-XXXX or reply to this email.</p>
+        
+        <p>Thank you for banking with us.</p>
+        
+        <p>Best regards,<br />
+        Apna Bank Team</p>
+        
+        <div class="footer">
+            <p>This is an automated message. Please do not reply to this email.</p>
+            <p>&copy; 2023 Apna Bank. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html> 

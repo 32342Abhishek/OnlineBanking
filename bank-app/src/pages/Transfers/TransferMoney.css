@@ -1,0 +1,126 @@
+.transfer-money-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+  
+  .transfer-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .transfer-header h1 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+  }
+  
+  .transfer-header p {
+    font-size: 1.1rem;
+    color: #666;
+  }
+  
+  .transfer-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+  }
+  
+  .transfer-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .transfer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--card-color);
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  
+  .transfer-card:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .transfer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .transfer-icon {
+    font-size: 1.8rem;
+    color: white;
+  }
+  
+  .transfer-card h2 {
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .transfer-card p {
+    font-size: 1rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+  }
+  
+  .proceed-btn {
+    background: var(--card-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+  
+  .proceed-btn:hover {
+    filter: brightness(1.1);
+  }
+  
+  @media (max-width: 768px) {
+    .transfer-money-container {
+      padding: 1rem;
+      margin: 1rem auto;
+    }
+  
+    .transfer-header h1 {
+      font-size: 2rem;
+    }
+  
+    .transfer-options {
+      grid-template-columns: 1fr;
+    }
+  }

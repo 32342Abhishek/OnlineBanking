@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome to Apna Bank</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .header {
+            background-color: #1a73e8;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            background-color: #e8f0fe;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+        }
+        .button {
+            background-color: #1a73e8;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Apna Bank</h1>
+        </div>
+        
+        <p>Dear <span th:text="${name}">Customer</span>,</p>
+        
+        <p>Welcome to Apna Bank! We're thrilled that you've chosen us as your banking partner.</p>
+        
+        <div class="highlight">
+            <p>Your account has been successfully created and is now active. You can now enjoy the following services:</p>
+            <ul>
+                <li>24/7 Online Banking</li>
+                <li>Mobile Banking App</li>
+                <li>Secure Transactions</li>
+                <li>Bill Payments</li>
+                <li>Fund Transfers</li>
+                <li>Loan Applications</li>
+            </ul>
+        </div>
+        
+        <p>For security reasons, we recommend that you change your password regularly and never share your login credentials with anyone.</p>
+        
+        <p>If you have any questions or need assistance, our customer support team is available 24/7 to help you.</p>
+        
+        <p>Thank you for choosing Apna Bank!</p>
+        
+        <p>Warm regards,<br />
+        Apna Bank Team</p>
+        
+        <div class="footer">
+            <p>This is an automated message, please do not reply to this email.</p>
+            <p>&copy; 2023 Apna Bank. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,96 @@
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 12px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Ensure the body or wrapper takes the full height */
+  html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Ensure content area takes up remaining space */
+  .content {
+    flex: 1;
+  }
+  
+.bank-footer {
+  background: linear-gradient(to right, #1e293b, #334155);
+  color: #f1f5f9;
+  padding: 0.75rem 0;
+  position: relative;
+}
+
+.simple-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.footer-legal {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-legal a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+  color: #f1f5f9;
+}
+
+@media (max-width: 600px) {
+  .footer-legal {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.footer-bottom-inline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .footer-bottom-inline {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  
+  .footer-legal {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
+  

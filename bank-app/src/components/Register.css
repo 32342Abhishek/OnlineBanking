@@ -1,0 +1,553 @@
+.register-container {
+    min-height: calc(100vh - var(--navbar-height));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+}
+
+.register-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.register-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(16, 185, 129, 0.1));
+    animation: float 15s infinite ease-in-out;
+}
+
+.register-shape:nth-child(1) {
+    width: 600px;
+    height: 600px;
+    top: -150px;
+    left: -200px;
+    animation-delay: 0s;
+}
+
+.register-shape:nth-child(2) {
+    width: 500px;
+    height: 500px;
+    bottom: -150px;
+    right: -100px;
+    background: linear-gradient(135deg, rgba(249, 115, 22, 0.2), rgba(249, 115, 22, 0.1));
+    animation-delay: -7s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+.register-card {
+    width: 650px;
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.register-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.register-title {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    background: linear-gradient(135deg, var(--tertiary-color), var(--success-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.register-subtitle {
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+    font-style: normal;
+}
+
+.input-with-icon input {
+    padding-left: 3rem;
+    height: 50px;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(203, 213, 225, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.input-with-icon input:focus {
+    border-color: var(--tertiary-color);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+    background-color: #fff;
+}
+
+.input-with-icon input::placeholder {
+    color: var(--text-light);
+    opacity: 0.7;
+}
+
+.input-with-icon input.error {
+    border-color: var(--error-color);
+    background-color: rgba(239, 68, 68, 0.05);
+}
+
+.field-error {
+    color: var(--error-color);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.password-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    font-style: normal;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--tertiary-color);
+    margin-top: 3px;
+}
+
+.checkbox-group label {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.terms-link {
+    color: var(--tertiary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.terms-link:hover {
+    color: var(--success-color);
+    text-decoration: underline;
+}
+
+.terms-error {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.register-button {
+    height: 50px;
+    border: none;
+    border-radius: var(--border-radius);
+    background: linear-gradient(135deg, var(--tertiary-color), var(--success-color));
+    color: white;
+    font-weight: 600;
+}
+
+/* OTP Verification Styles */
+.otp-card {
+    max-width: 500px;
+    padding: 3rem 2.5rem;
+}
+
+.otp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.otp-input-group {
+    margin-bottom: 0;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.otp-input {
+    text-align: center;
+    font-size: 1.2rem !important;
+    letter-spacing: 12px;
+    font-weight: 600;
+    padding: 1rem 1rem 1rem 3.5rem !important;
+    height: 60px !important;
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-width: 2px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.otp-input:focus {
+    border-color: var(--tertiary-color) !important;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2), 0 4px 6px rgba(0, 0, 0, 0.05) !important;
+}
+
+.otp-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.otp-button {
+    margin-bottom: 0;
+    height: 55px;
+    font-size: 1.1rem;
+}
+
+.otp-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0;
+}
+
+.otp-footer-text {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.resend-otp {
+    background: none;
+    border: none;
+    color: var(--tertiary-color);
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.resend-otp:hover {
+    color: var(--success-color);
+    text-decoration: underline;
+}
+
+.resend-otp:disabled {
+    color: var(--text-lighter);
+    cursor: not-allowed;
+    text-decoration: none;
+}
+
+.back-to-register-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    border-radius: var(--border-radius);
+    margin: 0 auto;
+}
+
+.back-to-register-button:hover {
+    background-color: rgba(203, 213, 225, 0.2);
+    color: var(--tertiary-color);
+}
+
+.back-to-register-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.back-icon {
+    font-style: normal;
+}
+
+.secure-verification-info {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(203, 213, 225, 0.5);
+    padding-top: 1rem;
+}
+
+.secure-icon {
+    font-style: normal;
+}
+
+.button-loader {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive styles for OTP verification */
+@media (max-width: 576px) {
+    .otp-card {
+        padding: 1.5rem;
+    }
+    
+    .otp-input {
+        letter-spacing: 4px;
+        font-size: 1.25rem !important;
+    }
+}
+
+/* Add responsive styles for mobile */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Add styling for select element */
+.input-with-icon select {
+    padding-left: 3rem;
+    height: 50px;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(203, 213, 225, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+
+.input-with-icon select:focus {
+    border-color: var(--tertiary-color);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+    background-color: #fff;
+}
+
+.input-with-icon select.error {
+    border-color: var(--error-color);
+    background-color: rgba(239, 68, 68, 0.05);
+}
+
+/* Style for date input */
+.input-with-icon input[type="date"] {
+    padding-left: 3rem;
+    height: 50px;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(203, 213, 225, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    width: 100%;
+    font-family: inherit;
+    color: var(--text-color);
+}
+
+.input-with-icon input[type="date"]:focus {
+    border-color: var(--tertiary-color);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+    background-color: #fff;
+}
+
+.input-with-icon input[type="date"].error {
+    border-color: var(--error-color);
+    background-color: rgba(239, 68, 68, 0.05);
+}
+
+/* Hide calendar icon in some browsers */
+.input-with-icon input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+/* Make form responsive on small screens */
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .register-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Style for select dropdown */
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Style for date input */
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="date"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Old OTP form styles */
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.back-to-register {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 5px;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
+.back-to-register:hover {
+    color: var(--secondary-color);
+}
+
+/* OTP input specific styles */
+input[type="text"]#otp {
+    font-size: 20px;
+    letter-spacing: 4px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.back-link-container {
+    text-align: center;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(203, 213, 225, 0.3);
+    padding-top: 1.25rem;
+}
+
+.otp-description {
+    margin-top: 1rem;
+    text-align: center;
+    background-color: rgba(16, 185, 129, 0.1);
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    border: 1px dashed rgba(16, 185, 129, 0.3);
+}
+
+.otp-description p {
+    font-size: 0.9rem;
+    color: var(--success-color);
+    margin: 0;
+    font-weight: 500;
+}

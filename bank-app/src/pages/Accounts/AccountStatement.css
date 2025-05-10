@@ -1,0 +1,86 @@
+.statement-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .statement-container h1 {
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  .statement-filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+  }
+  
+  .date-filter {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .date-filter label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .date-filter input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .download-btn {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .download-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .statement-table-container {
+    overflow-x: auto;
+  }
+  
+  .statement-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .statement-table th,
+  .statement-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .statement-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+  }
+  
+  .statement-table tr:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .debit {
+    color: #dc3545;
+  }
+  
+  .credit {
+    color: #28a745;
+  }
